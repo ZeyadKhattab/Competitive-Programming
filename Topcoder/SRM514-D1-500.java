@@ -2,7 +2,7 @@
 /*
  * First, we can see that cell (i,j) and cells (i+k*n,j+b*m) for any constants k & b must have the same parity 
  * the 2 sequences i,i+1,i+2,...,i+n-1 and i+1,i+2,..,i+n-1, i+n only have i replaced by i+n, so for the 2 sequences to have
- * the sum parity of sum, i and i+n must have the same parity, so now we can solve the problem for an n*m grid
+ * the same parity of sum, i and i+n must have the same parity, so now we can solve the problem for an n*m grid
  * and we will solve it using dp(row,msk) where msk represents the cumulative parity of all the columns
  */
 import java.util.Arrays;
