@@ -2,8 +2,8 @@
 /*
  * We will try all different number of games (t), and for each t, there is a unique s or no suitable s,
  * we will find this s by simulating the match by jumping t games at a time using binary search and at the end verifying that one player
- * one more sets than the other , number of games + n/1 +n/2 +n/3+n/4+....n/n which is equal n+n(log(n)) so 
- * overall complexity is n*log(n)
+ * one more sets than the other , number of games + (n/1 +n/2 +n/3+n/4+....n/n)*log(n) which is equal n+n(log(n))*log(n) so 
+ * overall complexity is n*log^2(n)
  */
 import java.io.*;
 import java.util.*;
