@@ -1,3 +1,10 @@
+/*
+ * For each cell at a given time, we would like to know whether it is reachable or not, 
+ * and a cell is reachable if it is not within the rectangles in the input, moreover is it adjacent to a cell
+ * which is reachable to a time-1 and time+1
+ * so, we will loop once in increasing time and once in reverse to know whether each cell is reachable given the cells
+ * that are less (or greater)
+ */
 import java.io.*;
 import java.util.*;
 
