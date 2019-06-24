@@ -36,6 +36,7 @@ public class DiskTree {
 			}
 			trie.query();
 			out.println();
+			sc.nextLine();
 		}
 		out.close();
 
