@@ -1,4 +1,3 @@
-// same code will get RTE on UVA 1556
 import java.io.*;
 import java.util.*;
 import java.util.Map.Entry;
