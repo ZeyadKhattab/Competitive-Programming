@@ -3,11 +3,11 @@ import java.util.*;
 
 public class trezor {
 
-	static long gcd(long a, long b) {
+	static int gcd(int a, int b) {
 		return b == 0 ? a : gcd(b, a % b);
 	}
 
-	static long lcm(long a, long b) {
+	static int lcm(int a, int b) {
 		return a / gcd(a, b) * b;
 	}
 
@@ -25,12 +25,12 @@ public class trezor {
 		return ans;
 	}
 
-	static long remove(ArrayList<Integer> factors, int L) {
+	static int remove(ArrayList<Integer> factors, int L) {
 
-		long ans = 0;
+		int ans = 0;
 		int size = factors.size();
 		for (int msk = 1; msk < 1 << size; msk++) {
-			long div = 1;
+			int div = 1;
 			for (int j = 0; j < size; j++)
 				if ((msk & (1 << j)) > 0)
 					div = lcm(div, factors.get(j));
@@ -45,23 +45,9 @@ public class trezor {
 
 	}
 
-	static long remove(int x, int L) {
+	static int remove(int x, int L) {
 
 		return remove(getPrimeFactors(x), L);
-	}
-
-	static ArrayList<Integer> union(int x, int y) {
-		ArrayList<Integer> ans = new ArrayList();
-		ArrayList<Integer> a = getPrimeFactors(x), b = getPrimeFactors(y);
-		for (int p1 : a)
-			for (int p2 : b)
-				ans.add(p1 == p2 ? p1 : p1 * p2);
-		Collections.sort(ans);
-		ArrayList<Integer> unique = new ArrayList();
-		for (int i = 0; i < ans.size(); i++)
-			if (i == 0 || ans.get(i) != ans.get(i - 1))
-				unique.add(ans.get(i));
-		return unique;
 	}
 
 	public static void main(String[] args) throws IOException {
@@ -70,9 +56,9 @@ public class trezor {
 		int B = sc.nextInt() + sc.nextInt(), L = sc.nextInt();
 		long[] ans = new long[3];
 		for (int dx = 0; dx <= B; dx++) {
-			long notA = dx == 0 ? L - 1 : remove(dx, L);
-			long notB = dx == B ? L - 1 : remove(B - dx, L);
-			long notBoth = dx == 0 ? notB : dx == B ? notA : remove(union(dx, B - dx), L);
+			int notA = dx == 0 ? L - 1 : remove(dx, L);
+			int notB = dx == B ? L - 1 : remove(B - dx, L);
+			int notBoth = dx == 0 ? notB : dx == B ? notA : notA + notB - remove(lcm(dx, B - dx), L);
 			ans[0] += notBoth;
 			ans[1] += notA + notB - 2 * notBoth;
 			ans[2] += L - (notA + notB - notBoth);
