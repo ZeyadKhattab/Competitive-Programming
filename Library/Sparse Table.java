@@ -7,10 +7,10 @@ static class SparseTable {
 		SparseTable(int []a) {
 			this.a=a;
 			int n = a.length;
-			log = new int[n];
-			for (int i = 2; i < n; i++)
+			log = new int[n+1];
+			for (int i = 2; i <= n; i++)
 				log[i] = log[i / 2] + 1;
-			table = new int[25][n];
+			table = new int[log[n]+1][n];
 			for (int i = 0; i < n; i++)
 				table[0][i] = i;
 			for (int i = 1, len = 2; len < n; i++, len <<= 1)
