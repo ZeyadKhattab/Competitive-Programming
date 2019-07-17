@@ -13,7 +13,7 @@ static class SparseTable {
 			table = new int[log[n]+1][n];
 			for (int i = 0; i < n; i++)
 				table[0][i] = i;
-			for (int i = 1, len = 2; len < n; i++, len <<= 1)
+			for (int i = 1, len = 2; len <= n; i++, len <<= 1)
 				for (int j = 0; j + len <= n; j++) {
 					int u = table[i - 1][j], v = table[i - 1][j + len / 2];
 					table[i][j] = a[u] < a[v] ? u : v;
