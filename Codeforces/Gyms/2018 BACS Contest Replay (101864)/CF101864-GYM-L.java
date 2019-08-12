@@ -9,7 +9,7 @@
 import java.io.*;
 import java.util.*;
 
-public class School Reunion {
+public class SchoolReunion {
 
 	static int INF = (int) 1e9;
 
