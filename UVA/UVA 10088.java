@@ -1,4 +1,10 @@
-// Applying Pick's theorem
+// Applying Pick's theorem https://en.wikipedia.org/wiki/Pick%27s_theorem
+// for polygons with integer corners
+// A = i+ b/2 -1  => 2*A=2*i + b -2
+// A=area , i =number of internal integer points, b=number of boundary integer points
+//we can easily find the 2*area by cross product, for boundary points, we can loop over the segments and calculate the slope
+//m=dy/dx then divide dx by gcd(dx,dy), we can see that each time x is incremented by gcd, corresponding y is integer
+// knowing A,b we can calculate number of internal points as (2*A+2-b)/2
 import java.io.*;
 import java.util.*;
 
