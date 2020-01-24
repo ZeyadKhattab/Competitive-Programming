@@ -6,7 +6,7 @@ public class HiddenTree {
 	static int INF = (int) 1e7;
 
 	static int Solve(ArrayList<Integer> a) {
-		System.out.println(a);
+
 		int ans = 0;
 		int tot = 0;
 		for (int x : a)
@@ -16,7 +16,7 @@ public class HiddenTree {
 		Arrays.fill(dp, -INF);
 		dp[0] = 0;
 		for (int x : a) {
-			for (int sum = N; sum >= x; sum--)
+			for (int sum = tot / x * x; sum >= x; sum -= x)
 				dp[sum] = Math.max(dp[sum], 1 + dp[sum - x]);
 		}
 		for (int i = 1; i <= tot; i <<= 1)
