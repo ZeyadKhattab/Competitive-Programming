@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Library/|FB Hacker Cup/2018/Qualifications/" kind="src" path=""/>
+	<classpathentry kind="src" path="FB Hacker Cup/2018/Qualifications"/>
+	<classpathentry kind="src" path="Library"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
