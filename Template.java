@@ -46,7 +46,7 @@ public class Template {
 		}
 
 		boolean ready() throws IOException {
-			return br.ready();
+			return br.ready() || st.hasMoreTokens();
 		}
 		int[] nxtArr(int n) throws IOException {
 			int[] ans = new int[n];
